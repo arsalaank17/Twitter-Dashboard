@@ -96,7 +96,6 @@ class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
             self._cached_headers = []
 
     def dispatch(self):
-
         """Dispatch incoming requests."""
         self.handler = None
         self.response_sent = False
@@ -118,12 +117,6 @@ class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         if not hasattr(self.handler, method_name):
             self.send_error(501, "Unsupported method ({})".format(self.command))
             return
-
-        if 'description' in self.path or self.path == '/':
-            f = open("text_files/filtru.txt", "w")
-            f.write(self.path)
-            f.close()
-
 
         # apply filters to request
         # note: filters are applied in order of registration
@@ -165,8 +158,6 @@ class HTTPRequestHandler(http.server.SimpleHTTPRequestHandler):
         if trailing_slash:
             path += '/'
         return path
-
-
 
     # Standard HTTP verbs bound to dispatch method
     def do_GET(self): self.dispatch()

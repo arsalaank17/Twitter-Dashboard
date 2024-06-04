@@ -191,16 +191,13 @@ block.fn.barchart = function(config) {
             	}
        	 
     	} },
-        // flot initialization options
-        options: { 
-            xaxis: {
+	// flot initialization options
+	options: { xaxis: {
                 mode: "categories",
                 tickLength: 0
-            }
-        }
+            }}
 
     }, config);
-
 
     var bardata_series = options.series;
     var bardata_first;
@@ -209,30 +206,30 @@ block.fn.barchart = function(config) {
 
     var translate_bar = function() {
         var result = [];
-        for(var k in bardata_series) {
-            if (bardata_series.hasOwnProperty(k)) {
-            var newserie = jQuery.extend({}, bardata_series[k]);
-                var newdata = [];
-            var data = newserie.data;
-            var max = 0;
+	for(var k in bardata_series) {
+	    if (bardata_series.hasOwnProperty(k)) {
+		var newserie = jQuery.extend({}, bardata_series[k]);
+        	var newdata = [];
+		var data = newserie.data;
+		var max = 0;
 
-            for(var l in data) {
-                    if (data.hasOwnProperty(l)) {
-                            max = Math.max(max, data[l]);
-                }
-            }
+		for(var l in data) {
+	    	    if (data.hasOwnProperty(l)) {
+                        max = Math.max(max, data[l]);
+		    }
+		}
 
-            for(var l in data) {
-                    if (data.hasOwnProperty(l)) {
-                    if ( options.filter_function(l,data[l],max) )
-                    newdata.push([l,data[l]]);
-                }
-            }
-            newserie.data = newdata;
-            result.push(newserie);
-            }
-        }
-        return result;
+		for(var l in data) {
+	    	    if (data.hasOwnProperty(l)) {
+		        if ( options.filter_function(l,data[l],max) )
+			    newdata.push([l,data[l]]);
+		    }
+		}
+		newserie.data = newdata;
+		result.push(newserie);
+	    }
+	}
+	return result;
     }
 
     var plot = $.plot(this.$element, translate_bar(), options.options);
@@ -242,50 +239,50 @@ block.fn.barchart = function(config) {
 
     	if ( serie_label == undefined )
 		data = bardata_series[bardata_first].data;
-        else 
-            data = bardata_series[serie_label].data;
-        if (data.hasOwnProperty(category))
-            data[category] = (data[category] + value);
-        else
-            data[category] = value;
-        redraw();
+	else 
+		data = bardata_series[serie_label].data;
+	if (data.hasOwnProperty(category))
+		data[category] = (data[category] + value);
+	else
+		data[category] = value;
+	redraw();
     }
 
     var setbar = function(serie_label, category, value) {
     	var data;
 
     	if ( serie_label == undefined )
-            data = bardata_series[bardata_first].data;
-        else 
-            data = bardata_series[serie_label].data;
-        data[category] = value;
-        redraw();
+		data = bardata_series[bardata_first].data;
+	else 
+		data = bardata_series[serie_label].data;
+	data[category] = value;
+	redraw();
     }
 
     var redraw = function() {
         plot.setData(translate_bar());
-	    plot.setupGrid();
+	plot.setupGrid();
         plot.draw();
     }
 
     var reset = function() {
-        for(var k in bardata_series) {
-            if (bardata_series.hasOwnProperty(k)) {
-                bardata_series[k].data = {};
-            }
-        }
+	for(var k in bardata_series) {
+	    if (bardata_series.hasOwnProperty(k)) {
+		bardata_series[k].data = {};
+	    }
+	}
     }
 
     this.actions({
         'set': function(e, message) {
-		    setbar(message.series,message.value[0],message.value[1]);
+		setbar(message.series,message.value[0],message.value[1]);
         },
         'add': function(e, message) {
-		    addbar(message.series,message.value[0],message.value[1]);
+		addbar(message.series,message.value[0],message.value[1]);
         },
         'reset': function(e, message) {
-		    reset();
-	    }
+		reset();
+	}
     });
     // return element to allow further work
     return this.$element;

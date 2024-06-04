@@ -1,0 +1,165 @@
+/*
+** Base layout:
+**   Grid layout + vertical sizing classes sized to match
+*/
+
+/* Grid layout based on (http://960.gs/) */
+@import url(grid.css);
+
+/* Vertical classes */
+
+.grid_1, .vert_1,
+.grid_2, .vert_2,
+.grid_3, .vert_3,
+.grid_4, .vert_4,
+.grid_5, .vert_5,
+.grid_6, .vert_6,
+.grid_7, .vert_7,
+.grid_8, .vert_8,
+.grid_9, .vert_9,
+.grid_10, .vert_10,
+.grid_11, .vert_11,
+.grid_12, .vert_12 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.container_12 .vert_1 { height:60px; }
+.container_12 .vert_2 { height:140px; }
+
+.container_12 .vert_3 { height:250px; }
+
+.container_12 .vert_4 { height:300px; }
+.container_12 .vert_5 { height:380px; }
+.container_12 .vert_6 { height:460px; }
+.container_12 .vert_7 { height:540px; }
+.container_12 .vert_8 { height:620px; }
+.container_12 .vert_9 { height:700px; }
+.container_12 .vert_10 { height:780px; }
+.container_12 .vert_11 { height:860px; }
+.container_12 .vert_12 { height:940px; }
+
+
+/* Layout details */
+
+p:first-child {
+    margin-top: 0;
+}
+
+
+/* Log block */
+
+.block.log {
+    overflow: auto;
+}
+
+
+/* Tweets block */
+
+.tweet-list * {
+    margin: 0;
+    padding: 0;
+}
+
+.tweet-list.stream-items {
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*  */
+img.logo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.title_box {
+    border: #3c5a86 1px dotted;
+}
+
+button.btn{
+    background: transparent;
+    color: orange;
+    font-size: 15px;
+    padding: 5px 8px;
+    text-transform: uppercase;
+    cursor: pointer;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+/*----------------SECTION WORDCLOUD-----------------*/
+button.wcl:hover{
+    background-color: orange;
+    color: black;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.other_box {
+    color: #333333;
+    background-color: orange;
+}
+
+/*----------------SECTION SOCCER-----------------*/
+.a {
+    width:50%;
+    float: left;
+}
+button.scr:hover{
+    background-color: orange;
+    color: black;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.s_graph {
+    color: #333333;
+    float: right;
+    background-color: orange;
+}
+
+/*----------------SECTION BASKETBALL-----------------*/
+button.bsk:hover{
+    background-color: orange;
+    color: black;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.b_graph {
+    color: #333333;
+    background-color: orange;
+}
+
+/*----------------SECTION FOOTBALL----------------*/
+button.ftb:hover{
+    background-color: orange;
+    color: black;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.f_graph {
+    color: #333333;
+    background-color: orange;
+}
+
+/*----------------SECTION RUGBY----------------*/
+button.rb:hover{
+    background-color: orange;
+    color: black;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.r_graph {
+    color: #333333;
+    background-color: orange;
+}

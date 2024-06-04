@@ -86,12 +86,6 @@ def GenerateEvent(name):
     """
     class EventGenerationHandler(httpd.Handler):
         def handle_POST(self):
-            print(self.request.headers)
-            # if 'MESSAGEFROMJS' in self.request.headers:
-            f = open("demofile2.txt", "a")
-            f.write("Now the file has more content!")
-            f.close()
-
             # handle weirdness
             if 'content-length' not in self.request.headers:
                 self.request.send_error(411)

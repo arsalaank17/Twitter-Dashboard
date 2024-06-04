@@ -1,4 +1,3 @@
-
 (function($, block) {
     // a simple wordcloud example
     block.fn.wordcloud = function(config) {

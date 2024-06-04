@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Neca Test</title>
+    <link rel="stylesheet" href="/style/layout.css"/>
+    <link rel="stylesheet" href="/style/theme.css"/>
+    <script src="/lib/jquery-2.1.1.min.js"></script>
+    <script src="/lib/jquery.flot.min.js"></script>
+    <script src="/lib/core.js"></script>
+    <script src="/lib/charts.js"></script>
+    <script src="/lib/log.js"></script>
+    <script src="/lib/tweets.js"></script>
+    <script src="/lib/wordcloud.js"></script>
+    <script src="/lib/jquery.flot.categories.min.js"></script>
+    <script src="/lib/jquery.flot.pie.js"></script>
+    <script src="/lib/jqcloud-1.0.4.js"></script>
+    <link rel="stylesheet" href="/style/wordcloud.css"/>
+</head>
+
+<!------------------FORMAT--------------------->
+<body class="container_12" , style="background-color:#333333;">
+    <div>
+        <img class="logo" src="logo.png" width="250px"/>
+    </div>
+</body>
+
+<!---------------WORDCLOUD & OTHER--------------------->
+<body>
+    <div id="grid-container">
+        <button class="btn wcl" onclick="dis_wcl()">WORDCLOUD</button>
+        <div style="float: right">
+            <fieldset class="other_box" style="border: 1px #ffa500 solid">
+                OTHER
+            </fieldset>
+        </div>
+    </div>
+</body>
+<body class="container_12">
+    <div id="graph" class="grid_6 vert_3"></div>
+        <script>
+            block('#graph').wordcloud({
+                filter_function: function (cat, val, max) {
+                    return true
+                }
+            });
+            events.connect('wordcloud', '#graph');
+        </script>
+        <div id="other" class="grid_6 vert_3"></div>
+        <script>
+            block('#other').tweets({memory: 8});
+            events.connect('other', '#other');
+        </script>
+    </div>
+</body>
+
+<!---------------SOCCER--------------------->
+<body>
+    <div>
+        <button class="btn scr" onclick="dis_scr()">SOCCER</button>
+        <div style="float: right">
+            <fieldset class="s_graph" style="border: 1px orange solid">
+                SOCCER GRAPH
+            </fieldset>
+        </div>
+    </div>
+</body>
+<body class="container_12">
+    <div id="soccer" class="grid_6 vert_3"></div>
+        <script>
+            block('#soccer').tweets({memory: 8});
+            events.connect('soccer', '#soccer');
+        </script>
+    <div id="soccer_graph" class="grid_6 vert_3"></div>
+        <script>
+            block('#soccer_graph').rolling_chart({
+            memory: 500,
+                    chart: {
+                        yaxis: {
+                            min: -100,
+                            max: 100
+                        },
+                        xaxis: {
+                            show: true
+                        }
+                    }
+                });
+                events.connect('trending_soccer', '#soccer_graph');
+        </script>
+    </div>
+</body>
+
+<!---------------BASKETBALL--------------------->
+<body>
+    <div>
+        <button class="btn bsk" onclick="dis_bsk()">BASKETBALL</button>
+        <div style="float: right">
+            <fieldset class="b_graph" style="border: 1px orange solid">
+                BASKETBALL GRAPH
+            </fieldset>
+        </div>
+    </div>
+</body>
+<body class="container_12">
+    <div id="basketball" class="grid_6 vert_3"></div>
+    <script>
+        block('#basketball').tweets({memory: 8});
+        events.connect('basketball', '#basketball');
+    </script>
+    <div id="basketball_graph" class="grid_6 vert_3"></div>
+    <script>
+        block('#basketball_graph').rolling_chart({
+            memory: 500,
+            chart: {
+                yaxis: {
+                    min: -100,
+                    max: 100
+                },
+                xaxis: {
+                    show: true
+                }
+            }
+        });
+        events.connect('trending_basketball', '#basketball_graph');
+    </script>
+</body>
+
+<!---------------FOOTBALL--------------------->
+<body>
+    <div>
+        <button class="btn ftb" onclick="dis_ftb()">FOOTBALL</button>
+        <div style="float: right">
+            <fieldset class="f_graph" style="border: 1px orange solid">
+                FOOTBALL GRAPH
+            </fieldset>
+        </div>
+    </div>
+</body>
+<body class="container_12">
+    <div id="football" class="grid_6 vert_3"></div>
+    <script>
+        block('#football').tweets({memory: 8});
+        events.connect('football', '#football');
+    </script>
+    <div id="football_graph" class="grid_6 vert_3"></div>
+    <script>
+        block('#football_graph').rolling_chart({
+            memory: 500,
+            chart: {
+                yaxis: {
+                    min: -100,
+                    max: 100
+                },
+                xaxis: {
+                    show: true
+                }
+            }
+        });
+        events.connect('trending_football', '#football_graph');
+    </script>
+</body>
+
+<!---------------RUGBY--------------------->
+<body>
+    <div>
+        <button class="btn rgb" onclick="dis_rgb()">RUGBY</button>
+        <div style="float: right">
+            <fieldset class="r_graph" style="border: 1px orange solid">
+                    RUGBY GRAPH
+            </fieldset>
+        </div>
+    </div>
+</body>
+<body class="container_12">
+    <div id="rugby" class="grid_6 vert_3"></div>
+        <script>
+            block('#rugby').tweets({memory: 8});
+            events.connect('rugby', '#rugby');
+        </script>
+    <div id="rugby_graph" class="grid_6 vert_3"></div>
+        <script>
+            block('#rugby_graph').rolling_chart({
+                memory: 500,
+                chart: {
+                    yaxis: {
+                        min: -100,
+                        max: 100
+                    },
+                    xaxis: {
+                        show: true
+                    }
+                }
+            });
+            events.connect('trending_rugby', '#rugby_graph');
+        </script>
+</body>
+
+
+<script>
+    function dis_wcl() {
+        var x = document.getElementById("graph");
+        var y = document.getElementById("other");
+        if (x.style.display === "none") {
+            x.style.display = "block"
+            y.style.display = "block";
+        } else {
+            x.style.display = "none"
+            y.style.display = "none";
+        }
+    }
+
+    function dis_scr() {
+        var x = document.getElementById("soccer");
+        var y = document.getElementById("soccer_graph");
+        if (x.style.display === "none") {
+            x.style.display = "block"
+            y.style.display = "block";
+        } else {
+            x.style.display = "none"
+            y.style.display = "none";
+        }
+    }
+
+    function dis_bsk() {
+        var x = document.getElementById("basketball");
+        var y = document.getElementById("basketball_graph");
+        if (x.style.display === "none") {
+            x.style.display = "block"
+            y.style.display = "block";
+        } else {
+            x.style.display = "none"
+            y.style.display = "none";
+        }
+    }
+
+    function dis_ftb() {
+        var x = document.getElementById("football");
+        var y = document.getElementById("football_graph");
+        if (x.style.display === "none") {
+            x.style.display = "block"
+            y.style.display = "block";
+        } else {
+            x.style.display = "none"
+            y.style.display = "none";
+        }
+    }
+
+    function dis_rgb() {
+        var x = document.getElementById("rugby");
+        var y = document.getElementById("rugby_graph");
+        if (x.style.display === "none") {
+            x.style.display = "block"
+            y.style.display = "block";
+        } else {
+            x.style.display = "none"
+            y.style.display = "none";
+        }
+    }
+</script>
+
+</html>
