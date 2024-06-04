@@ -1,0 +1,32 @@
+Brasil BRA
+Cameroon CMR
+Croatia CRO
+Mexico MEX
+Australia AUS
+Chile Chi
+Netherlands NED
+Spain ESP
+Colombia col
+Greece gre
+Ivory Coast civ
+Japan jpn
+Costa Rica crc
+England eng
+Italy ita
+Uruguay uru
+Ecuador ecu
+France fra
+Honduras hon
+Switzerland sui
+Argentina arg
+Bosnia and Herzegovina bih
+Iran irn
+Nigeria nga
+Germany ger
+Ghana gha
+Portugal por
+United States usa
+Algeria alg
+Belgium bel
+Russia rus
+South Korea cor
