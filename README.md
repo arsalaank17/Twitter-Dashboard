@@ -1,5 +1,9 @@
 # SPORTweet Dashboard
 
+# Authors
+Made as a university project by Arsalaan Khan , Clara Ostendarp , Mohammed Faisal Nizamudeen , Gido Alberts, Maria Zampa and Ujjwal Dodeja
+
+
 ## Overview
 The SPORTweet Dashboard is a front-end application designed to categorize and display tweets related to different sports. The dashboard processes tweets one by one, categorizing them into five sections: Soccer, Football, Basketball, Rugby, and Other. Additionally, it features interactive elements such as trendline graphs and a word cloud representing the popularity of various sports.
 
