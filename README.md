@@ -8,7 +8,8 @@ The SPORTweet Dashboard is a front-end application designed to categorize and di
 - Rolling Graphs: Trendlines for Soccer, Football, Basketball, and Rugby are displayed as rolling graphs.
 - Word Cloud: Shows the popularity of sports keywords (soccer, football, basketball, rugby, volleyball, cricket, tennis, and baseball).
 - Interactive Labels: Labels double as buttons to collapse or expand tweet blocks and graphs.
-- Technologies Used
+  
+## Technologies Used
 - Python: For processing tweets and backend logic.
 - HTML: For creating the structure of the homepage.
 - CSS: For styling the dashboard.
