@@ -20,6 +20,11 @@ The SPORTweet Dashboard is a front-end application designed to categorize and di
 - index.html: HTML script for the homepage.
 - CSS files: Multiple files for styling the dashboard.
 
+## Screenshot
+![image](https://github.com/arsalaank17/Twitter-Dashboard/assets/62721213/e6c198b2-879d-4089-9af1-8d893f4b4139)
+
+
+
 ## Setup Instructions
 To set up the SPORTweet Dashboard, follow these steps:
 
