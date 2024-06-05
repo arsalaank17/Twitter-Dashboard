@@ -1,6 +1,6 @@
 # SPORTweet Dashboard
 
-# Authors
+## Authors
 Made as a university project by Arsalaan Khan , Clara Ostendarp , Mohammed Faisal Nizamudeen , Gido Alberts, Maria Zampa and Ujjwal Dodeja
 
 
